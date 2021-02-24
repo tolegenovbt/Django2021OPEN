@@ -1,0 +1,31 @@
+{% extends 'main/index.html' %}
+
+{% block title %}Completed TODO list{% endblock %}
+
+{% block content %}
+    <h1>Completed tasks in "List 1"</h1>
+    <div class="lists_div">
+        <ul class="tasks_list">
+            <li class="lists">
+                <h5 class="task_name">Task</h5>
+                <h5 class="task_created">Created</h5>
+                <h5 class="task_dueOn">Due on</h5>
+                <h5 class="task_owner">Owner</h5>
+                <h5 class="task_mark">Mark</h5>
+            </li>
+            {% for el in tasks %}
+                <li class="lists">
+                    <h5 class="task_name">{{ el.name }}</h5>
+                    <h5 class="task_created">{{ el.created }}</h5>
+                    <h5 class="task_dueOn">{{ el.dueOn }}</h5>
+                    <h5 class="task_owner">{{ el.owner }}</h5>
+                    {% if el.mark == 0 %}
+                        <button type="button" class="btn btn-info">Done</button>
+                    {% else %}
+                        <button type="button" class="btn btn-info">Not Done</button>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+<aside><p>BFDjango TODO</p></aside>
+    <div class="todo_body">
+        <div class="top_button">
+            <button type="button" class="btn btn-primary">Add Task</button>
+        </div>
+        {% block content %}
+        {% endblock %}
+        <button type="button" class="btn btn-warning">View incomplete tasks</button>
+        <button type="button" class="btn btn-danger">Delete this list</button>
+    </div>
+</body>
+</html>
