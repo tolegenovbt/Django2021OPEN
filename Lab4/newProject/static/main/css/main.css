@@ -1,0 +1,62 @@
+aside{
+    font-size: 40px;
+    background: #04001c;
+    height: 100px;
+    /*text-align: center;*/
+}
+aside p{
+    padding-top: 13px;
+    color: darkgray;
+}
+.todo_body{
+    padding-left: 300px;
+    margin-left: 100px;
+    width: 1300px;
+}
+.lists h5{
+    height: 70px;
+    font-size: 20px;
+    display: inline-block;
+    width: 19%;
+    padding-top: 25px;
+    /*margin-left: 400px;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: left;*/
+}
+.lists a{
+    height: 70px;
+    font-size: 20px;
+    display: inline-block;
+    width: 19%;
+    padding-top: 25px;
+    /*margin-left: 400px;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: left;*/
+}
+.tasks_list {
+    /*border: 1px solid black;*/
+	/*height: 200px;*/
+    margin-left: 0px;
+    padding-left: 0px;
+}
+li{
+    list-style-type: none;
+}
+.lists{
+    /*border: 1px solid darkgray;*/
+    border-top: 1px solid darkgray;
+}
+
+.top_button{
+    border-bottom: 1px solid darkgray;
+    height: 80px;
+}
+.top_button .btn-primary{
+    margin-top: 20px;
+}
+
+/*body{*/
+/*    background: red;*/
+/*}*/
