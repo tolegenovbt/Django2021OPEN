@@ -1,0 +1,17 @@
+{% extends 'main/index.html' %}
+
+{% block title %}TODO_list{% endblock %}
+
+{% block content %}
+    <h1>Lists</h1>
+    <div class="lists_div">
+        <ul class="tasks_list">
+            {% for el in lists %}
+                <li class="lists">
+                    <h5 class="task_name">{{ el.name }}</h5>
+                    <a href="{% url 'todo-list-details' el.id %}" class="btn btn-warning">tasks</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

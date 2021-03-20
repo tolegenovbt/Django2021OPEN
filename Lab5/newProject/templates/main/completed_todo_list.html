@@ -1,0 +1,61 @@
+{% extends 'main/index.html' %}
+
+{% block title %}TODO list{% endblock %}
+
+{% block content %}
+    {% if 'completed' in request.path  %}
+        <div class="top_button">
+                <button type="button" class="btn btn-primary">Add Task</button>
+        </div>
+        <h1>Completed tasks</h1>
+        <div class="lists_div">
+            <ul class="tasks_list">
+                <li class="lists">
+                    <h5 class="task_name">Task</h5>
+                    <h5 class="task_created">Created</h5>
+                    <h5 class="task_dueOn">Due on</h5>
+                    <h5 class="task_owner">Owner</h5>
+                    <h5 class="task_mark">Mark</h5>
+                </li>
+                {% for el in tasks %}
+                    <li class="lists">
+                        <h5 class="task_name">{{ el.name }}</h5>
+                        <h5 class="task_created">{{ el.created }}</h5>
+                        <h5 class="task_dueOn">{{ el.dueOn }}</h5>
+                        <h5 class="task_owner">{{ el.owner }}</h5>
+                        <button type="button" class="btn btn-info">Not Done</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+            <button type="button" class="btn btn-warning">View incomplete tasks</button>
+            <button type="button" class="btn btn-danger">Delete this list</button>
+    {% else %}
+        <div class="top_button">
+                <button type="button" class="btn btn-primary">Add Task</button>
+        </div>
+        <h1>Tasks</h1>
+        <div class="lists_div">
+            <ul class="tasks_list">
+                <li class="lists">
+                    <h5 class="task_name">Task</h5>
+                    <h5 class="task_created">Created</h5>
+                    <h5 class="task_dueOn">Due on</h5>
+                    <h5 class="task_owner">Owner</h5>
+                    <h5 class="task_mark">Mark</h5>
+                </li>
+                {% for el in tasks %}
+                    <li class="lists">
+                        <h5 class="task_name">{{ el.name }}</h5>
+                        <h5 class="task_created">{{ el.created }}</h5>
+                        <h5 class="task_dueOn">{{ el.dueOn }}</h5>
+                        <h5 class="task_owner">{{ el.owner }}</h5>
+                        <button type="button" class="btn btn-info">Done</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a class="btn btn-warning">View completed tasks</a>
+        <button type="button" class="btn btn-danger">Delete this list</button>
+    {% endif %}
+{% endblock %}
